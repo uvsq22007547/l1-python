@@ -27,7 +27,8 @@ def testeConjecture(n_max):
 
 def tempsVol(n):
     """ Retourne le temps de vol de n """
-    etapes = len(syracuse(n)) - 1
+    l = syracuse(n)
+    etapes = len(l) - 1
     return etapes
 
 #print("Le temps de vol de", 2, "est", tempsVol(2))
