@@ -13,7 +13,7 @@ def syracuse(n):
     return l_res
 
 
-# print(syracuse(3))
+# print(syracuse(9))
 # print(help(syracuse))
 
 
@@ -30,13 +30,33 @@ def tempsVol(n):
     etapes = len(syracuse(n)) - 1
     return etapes
 
-# print("Le temps de vol de", 2, "est", tempsVol(2))
+#print("Le temps de vol de", 2, "est", tempsVol(2))
 
 def tempsVolListe(n_max):
     """ Retourne la liste de tous les temps de vol de 1 à n_max """
-    l = [n_max]
-    for i in range(1, n_max+1, 1):
+    l = []
+    for i in range(1, n_max+1):
         l.append(tempsVol(i))
     return l
 
- print(tempsVolListe(100))
+#print(tempsVolListe(100))
+
+#6
+#l = tempsVolListe(10000)
+#m = max(l)
+#print(l.index(m)+1)
+
+#7
+def altitudeMax(n):
+    """ Retourne la plus grande valeur atteinte par n lors de son vol """
+    m = max(syracuse(n))
+    return m
+
+def altitudeMaxListe(n_max):
+    """ Retourne la valeur des altitudes max de 1 à n_max """
+    l = []
+    for i in range(1 , n_max+1):
+        l.append(altitudeMax(i))
+    return l
+
+print(max(altitudeMaxListe(10)))
