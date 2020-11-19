@@ -30,13 +30,13 @@ def tempsVol(n):
     etapes = len(syracuse(n)) - 1
     return etapes
 
-# print("Le temps de vol de", 3, "est", tempsVol(3))
+# print("Le temps de vol de", 2, "est", tempsVol(2))
 
 def tempsVolListe(n_max):
     """ Retourne la liste de tous les temps de vol de 1 à n_max """
-    l = []
+    l = [n_max]
     for i in range(1, n_max+1, 1):
         l.append(tempsVol(i))
     return l
 
-print(tempsVolListe(100))
+ print(tempsVolListe(100))
