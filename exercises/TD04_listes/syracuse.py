@@ -23,4 +23,12 @@ def testeConjecture(n_max):
         syracuse(i)
     return "Conjecture vérifiée jusqu'à n = " + str(n_max)
 
-print(testeConjecture(10000))
+# print(testeConjecture(10000))
+
+def tempsVol(n):
+    """ Retourne le temps de vol de n """
+    etapes = len(syracuse(n)) - 1
+    return etapes
+
+# print("Le temps de vol de", 3, "est", tempsVol(3))
+
