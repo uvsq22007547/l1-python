@@ -13,7 +13,7 @@ def syracuse(n):
     return l_res
 
 
-# print(syracuse(9))
+# print(syracuse(3))
 # print(help(syracuse))
 
 
@@ -28,36 +28,44 @@ def testeConjecture(n_max):
 def tempsVol(n):
     """ Retourne le temps de vol de n """
     l = syracuse(n)
-    etapes = len(l) - 1
-    return etapes
+    return len(l) - 1
 
-#print("Le temps de vol de", 2, "est", tempsVol(2))
+# print("Le temps de vol de", 3, "est", tempsVol(3))
 
 def tempsVolListe(n_max):
     """ Retourne la liste de tous les temps de vol de 1 à n_max """
-    l = []
-    for i in range(1, n_max+1):
-        l.append(tempsVol(i))
-    return l
+    #l_res = []
+    #for i in range(1, n_max + 1):
+    #    l_res.append(tempsVol(i))
+    #return l_res
 
-#print(tempsVolListe(100))
+    # solution 2, avec une liste par compréhension:
+    return [tempsVol(i) for i in range(1, n_max + 1)]
 
-#6
-#l = tempsVolListe(10000)
-#m = max(l)
-#print(l.index(m)+1)
+# print(tempsVolListe(100))
 
-#7
+tvl = tempsVolListe(10)
+print(tvl)
+m = max(tvl)
+print(m)
+indice = tvl.index(m)
+print(indice)
+print("Le temps de vol max est", m, "atteint pour la valeur", indice + 1)
+
 def altitudeMax(n):
-    """ Retourne la plus grande valeur atteinte par n lors de son vol """
-    m = max(syracuse(n))
-    return m
+    """ retourne l'altitude max de l'entier n """
+    syr = syracuse(n)
+    return max(syr)
+
+# print(altitudeMax(3))
 
 def altitudeMaxListe(n_max):
-    """ Retourne la valeur des altitudes max de 1 à n_max """
-    l = []
-    for i in range(1 , n_max+1):
-        l.append(altitudeMax(i))
-    return l
+    """ Retourne la liste de tous les altitudes max de 1 à n_max """
+    return [altitudeMax(i) for i in range(1, n_max + 1)]
 
-print(max(altitudeMaxListe(10)))
+# print(altitudeMaxListe(100))
+
+aml = altitudeMaxListe(10000)
+m = max(aml)
+indice = aml.index(m)
+# print("La plus grande altitude max est", m, "atteint pour la valeur", indice + 1)
